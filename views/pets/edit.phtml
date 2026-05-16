@@ -1,0 +1,42 @@
+﻿<?php require_once 'views/templates/header.phtml'; ?>
+
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow-sm">
+            <div class="card-header bg-secondary text-white">
+                <h4 class="mb-0">Edit Pet Listing</h4>
+            </div>
+            <div class="card-body p-4">
+                <form action="index.php?controller=pet&action=edit&id=<?= $pet['id'] ?>" method="POST">
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Pet Name</label>
+                        <input type="text" class="form-control" name="name" value="<?= htmlspecialchars($pet['name']) ?>" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Type of Pet</label>
+                        <select class="form-select" name="type" required>
+                            <option value="Dog" <?= $pet['type'] == 'Dog' ? 'selected' : '' ?>>Dog</option>
+                            <option value="Cat" <?= $pet['type'] == 'Cat' ? 'selected' : '' ?>>Cat</option>
+                            <option value="Bird" <?= $pet['type'] == 'Bird' ? 'selected' : '' ?>>Bird</option>
+                            <option value="Other" <?= $pet['type'] == 'Other' ? 'selected' : '' ?>>Other</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-bold">Description / Distinctive Features</label>
+                        <textarea class="form-control" name="description" rows="4" required><?= htmlspecialchars($pet['description']) ?></textarea>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label fw-bold">Current Status</label>
+                        <select class="form-select" name="status">
+                            <option value="missing" <?= $pet['status'] == 'missing' ? 'selected' : '' ?>>Missing</option>
+                            <option value="found" <?= $pet['status'] == 'found' ? 'selected' : '' ?>>Found</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-success btn-lg w-100">Update Pet Listing</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php require_once 'views/templates/footer.phtml'; ?>

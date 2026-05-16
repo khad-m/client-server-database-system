@@ -1,0 +1,65 @@
+﻿:root {
+    --primary: #2563eb;
+    --secondary: #64748b;
+    --success: #10b981;
+    --danger: #ef4444;
+    --dark: #0f172a;
+    --light: #f8fafc;
+    --border: #e2e8f0;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--light);
+    color: var(--dark);
+    line-height: 1.5;
+}
+
+.navbar {
+    background-color: var(--dark) !important;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding: 1rem 0;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    color: #fff !important;
+}
+
+#petListContainer {
+    border: none;
+    background: transparent;
+}
+
+.list-group-item {
+    border: 1px solid var(--border);
+    margin-bottom: 0.75rem;
+    border-radius: 8px !important;
+    transition: all 0.2s ease;
+    border-left: 4px solid transparent;
+}
+
+.list-group-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.list-group-item.status-missing { border-left-color: var(--danger); }
+.list-group-item.status-found { border-left-color: var(--success); }
+
+#mainMap {
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+}
+
+.btn-primary { background-color: var(--primary); border: none; }
+.btn-success { background-color: var(--success); border: none; }
+
+#petListContainer::-webkit-scrollbar {
+    width: 6px;
+}
+#petListContainer::-webkit-scrollbar-thumb {
+    background: var(--secondary);
+    border-radius: 10px;
+}
